@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+
+  nginx:
+    container_name: nginx
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - socket
+      - bot
+    ports:
+      - 80:80
+
+  bot:
+    container_name: rasa
+    build:
+      context: bot
+      dockerfile: Dockerfile
+      # command: rasa run --p 5006
+    environment:
+      - POSTGRES_SERVER=${POSTGRES_SERVER}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - 5005:5005
+
+  db:
+    image: postgres:12-alpine
+    container_name: db
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  socket:
+    container_name: socket
+    build:
+      context: socket
+    environment:
+      COMM_URL: http://nginx/api/user-message/jovensalud
+      RASA_URL: http://nginx/rasa
+      NODE_ENV: development
+    ports:
+      - 7000:7000
+    volumes: # https://stackoverflow.com/questions/33663496/docker-bin-bash-nodemon-command-not-found
+      - ./socket:/etc/chatbot/socket  # node_modules needs to be installed on TSI-APP/sock folder, for development.
+
+volumes:
+  db-data:

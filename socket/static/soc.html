@@ -1,0 +1,30 @@
+<html>
+<!-- this is a chatbot web interface -->
+<body>
+    <div id="webchat"></div>
+    <script src="./rasa-webchat-minified.js"></script>
+
+    <script>
+        var userId = localStorage.getItem('chatbot_user_id');
+        if (!userId) {
+            userId = Math.ceil(Math.random() * 1000000);
+            localStorage.setItem('chatbot_user_id', userId);
+        }
+
+        WebChat.default.init({
+            selector: "#webchat",
+            customData: {"language": "en", "chatbot_user_id": userId},
+            socketUrl: "http://localhost:7000",
+            socketPath: "/socket.io/",
+            title: "Health Assistant",
+            subtitle: "I am here to help",
+            params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+        })
+
+        WebChat.open();
+        // WebChat.send('Heyy there')
+
+    </script>
+
+</body>
+</html>

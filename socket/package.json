@@ -1,0 +1,25 @@
+{
+  "name": "chatbot-socket-io",
+  "version": "1.0.0",
+  "description": "socket-io <> rasa api communication",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "debug": "nodemon --inspect=5679 index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivamSharmaMWP/chatbot.git"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

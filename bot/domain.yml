@@ -1,0 +1,54 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - inform_health_condition
+  - gratitude
+  - bot_challenge
+  - out_of_scope
+  - faq
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am your healthcare companion bot!!"
+
+  utter_out_of_scope:
+  - text: "Sorry, I'm still in my early days and so not smart enough to understand what you said 🙂, please rephrase."  
+
+  utter_medicine:
+  - text: "I can only suggest you some basic medicines like crocin for fever & body ache and ginger-honey syrup for soar throat. For proper treatment, please refer a nearby doctor."
+  
+  utter_welcome:
+  - text: "Welcome!"  
+
+  utter_faq/get_covid_news:
+  - text: Covid-19 situation is getting worse. The virus is mutating day-by-day and hospitals are over occupied.
+
+  utter_faq/ask_covid_queries:
+  - image: "https://images.outlookindia.com/public/uploads/articles/2020/11/25/face-mask-5679507_1280_570_850.png"
+    text: "It is advised to wear mask & maintain social distancing in public places, and if possible treat yourself at home by drinking hot water and washing hands at regular intervals." 
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

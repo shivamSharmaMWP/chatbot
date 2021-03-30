@@ -1,0 +1,153 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: gratitude
+  examples: |
+    - thank you!
+    - thanks
+    - okay, thanks a lot
+    - I'm grateful
+    - thanks a bunch.
+    - thank you very much.
+    - It's very kind of you.
+    - I really appreciate it.
+    
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: inform_health_condition
+  examples: |
+    - I'm having fever
+    - have headache
+    - was unwell
+    - had food poising
+    - I was down with fever
+    - I have severe stomachache
+    - suggest something for soar throat
+
+  # - which medicine should I take for fever?
+  # - what should a person take if he/she have been detected with covid-19?
+  # - What to do in Typhoid?
+  # - medicine for headache?
+  # - please suggest some medicine to cure covid-19  
+
+- intent: faq/get_covid_news
+  examples: |
+    - which is a good hospital for covid treatment in Delhi?
+    - from where can we get covid-19 vaccine?
+    - is it safe to visit hospitals for normal checkups?
+    - what is the current covid situation?
+    
+- intent: faq/ask_covid_queries
+  examples: |
+    - what to do if detected covid positive?
+    - how to cure covid-19 at home?
+    - how to treat covid at home?
+    - what are the precautionary steps to avoid covid-19?       
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you a robot?
+    - am I talking to an actual person?
+    - you're a bot aren't you?
+    - are you even a real person?
+
+- intent: out_of_scope
+  examples: |
+    - What is the global optimum of a non-convex function
+    - Tell me about quantum computing
+    - Who is Donald Trump?
+    - What do you think an idiot looks like?
+    - Do you know anything about soccer
+    - Tell me about football
+    - What is quantum computing
+    - Do you know about soccer?
+    - Do you know who is Justin Trudeau
+    - Do you know quantum computing?
+    - What is 2 + 2?     
+
+
